@@ -10,6 +10,7 @@
   --primary-color: hsl(240, 6%, 21%);
   --bg-sound: hsl(240, 9%, 89%);
   --bg-sound-select: hsl(194, 97%, 31%);
+  
 }
 
 body {
@@ -32,9 +33,13 @@ main {
 
 .counter {
   max-width: 32.1rem;
-  margin-right: 15rem;
+  margin-right: 19rem;
 
   font-size: 12rem;
+}
+
+.pause {
+  width: 4.8rem;
 }
 
 .buttons {
@@ -61,7 +66,7 @@ button {
 }
 
 .card  {
-  
+
   background-color: var(--bg-sound);
 
   border-radius: 2.4rem;
@@ -72,9 +77,8 @@ button {
   cursor: pointer;
 }
 
-.card:hover {
+.active {
   background-color:var(--bg-sound-select);
-  transition: .8s;
 }
 
 .hide {
