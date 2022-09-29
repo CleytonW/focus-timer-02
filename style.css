@@ -23,7 +23,7 @@ body {
   /* text-align: center; */
   justify-content: space-around; 
 
-  min-height: 100vh;
+  height: 100vh;
 
   gap: clamp(1rem, 10vw, 19rem);
   transition: 1s;
@@ -86,7 +86,7 @@ button.active {
 }
 
 .active path {
-  fill: #FFFF;
+  fill: var(--bg-sound);
 }
 
 .hide {

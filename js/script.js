@@ -7,6 +7,7 @@ const musicActivator = document.querySelectorAll('.card');
 const minutesDisplay = document.querySelector('.minutes');
 const secondsDisplay = document.querySelector('.seconds');
 
+
 function resetControls() {
   buttonPlay.classList.remove('hide');
   buttonPause.classList.add('hide');
@@ -40,7 +41,7 @@ function countdown () {
 buttonPlay.addEventListener('click', () => {
   buttonPlay.classList.add('hide');
   buttonPause.classList.remove('hide');
-  document.querySelector('.card').classList.add('active');
+  // document.querySelector('.card').classList.add('active');
 
   countdown()
 })
@@ -51,17 +52,36 @@ buttonPause.addEventListener('click', () => {
 
 buttonStop.addEventListener('click', () => {
   resetControls()
-  document.querySelector('.card').classList.remove('active');
+  // document.querySelector('.card').classList.remove('active');
 })
 
 buttonAddMinutes.addEventListener('click', () => {
   buttonAddMinutes.classList.add;
 })
 
-musicActivator.forEach((element) => {
-  element.addEventListener ('click', () => {
-    const select = document.querySelector('.active');
-    select.classList.remove('active');
-    element.classList.add('active');
-  })
-});
+const addActiveClassToButton = button => { // 2o. passo
+
+  const toggleButton = () => { // 4o.passo
+    const buttonClasses = button.classList;
+    buttonClasses.toggle("active");
+  }
+
+  button.addEventListener('click', toggleButton) // 3o.passo
+}
+
+musicActivator.forEach(addActiveClassToButton) // 1o. passo
+
+
+// const removeActiveClassToButton = button => {
+
+//   const removeSelected = () => {
+//     const buttonClasses = button.classList;
+//     buttonClasses.remove('active')
+//   }
+
+//   button.addEventListener('click', removeSelected)
+// }
+
+// disableMusic.forEach(removeActiveClassToButton)
+
+// console.log(disableMusic)
