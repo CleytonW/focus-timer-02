@@ -3,14 +3,35 @@ const buttonPause = document.querySelector('.pause')
 const buttonStop = document.querySelector('.stop');
 const buttonAddMinutes = document.querySelector('.increase');
 const buttonRemoveMinutes = document.querySelector('.decrease');
-const musicActivator = document.querySelectorAll('.card');
+const buttonForest = document.querySelector('.forest')
+const buttonRain = document.querySelector('.rain')
+const buttonCoffeeShop = document.querySelector('.coffeeShop')
+const buttonFirePlace = document.querySelector('.firePlace')
+// const musicActivator = document.querySelectorAll('.card');
+
 const minutesDisplay = document.querySelector('.minutes');
 const secondsDisplay = document.querySelector('.seconds');
+let minutes
 
+
+
+// const forestAudio = new Audio('/sounds/Floresta.wav')
+// const rainingAudio = new Audio('/sounds/Chuva.wav')
+// const coffeeShopAudio = new Audio('/sounds/Cafeteria.wav')
+// const firePlaceAudio = new Audio('/sounds/Lareira.wav')
 
 function resetControls() {
   buttonPlay.classList.remove('hide');
   buttonPause.classList.add('hide');
+}
+
+function updateTimerDisplay(minutes, seconds) {
+  minutesDisplay.textContent = String(minutes - 1).padStart(2, "0");
+  secondsDisplay.textContent = String(seconds - 1).padStart(2, "0");
+}
+
+function resetMinutes () {
+  minutesDisplay
 }
 
 function countdown () {
@@ -27,61 +48,62 @@ function countdown () {
     
     if (seconds <= 0) {
       seconds = 2;
-
-      minutesDisplay.textContent = String(minutes - 1).padStart(2, "0");
+      updateTimerDisplay(minutes, 0);
     };
     
-    secondsDisplay.textContent = String(seconds - 1).padStart(2, "0");
+    updateTimerDisplay(minutes, seconds)
     
     countdown()
   }, 1000);
 };
 
-
 buttonPlay.addEventListener('click', () => {
   buttonPlay.classList.add('hide');
   buttonPause.classList.remove('hide');
-  // document.querySelector('.card').classList.add('active');
-
   countdown()
 })
 
 buttonPause.addEventListener('click', () => {
+  buttonPlay.classList.remove('hide');
+  buttonPause.classList.add('hide');
   resetControls();
 })
 
 buttonStop.addEventListener('click', () => {
+  buttonPlay.classList.remove('hide');
+  buttonPause.classList.add('hide');
   resetControls()
-  // document.querySelector('.card').classList.remove('active');
+  resetMinutes()
 })
 
 buttonAddMinutes.addEventListener('click', () => {
   buttonAddMinutes.classList.add;
 })
 
-const addActiveClassToButton = button => { // 2o. passo
+buttonForest.addEventListener('click', function () {
+  buttonForest.classList.toggle('active')
+  buttonRain.classList.remove('active')
+  buttonCoffeeShop.classList.remove('active')
+  buttonFirePlace.classList.remove('active')
+})
 
-  const toggleButton = () => { // 4o.passo
-    const buttonClasses = button.classList;
-    buttonClasses.toggle("active");
-  }
+buttonRain.addEventListener('click', function () {
+  buttonRain.classList.toggle('active')
+  buttonForest.classList.remove('active')
+  buttonCoffeeShop.classList.remove('active')
+  buttonFirePlace.classList.remove('active')
+})
 
-  button.addEventListener('click', toggleButton) // 3o.passo
-}
+buttonCoffeeShop.addEventListener('click', function () {
+  buttonCoffeeShop.classList.toggle('active')
+  buttonRain.classList.remove('active')
+  buttonForest.classList.remove('active')
+  buttonFirePlace.classList.remove('active')
+})
 
-musicActivator.forEach(addActiveClassToButton) // 1o. passo
-
-
-// const removeActiveClassToButton = button => {
-
-//   const removeSelected = () => {
-//     const buttonClasses = button.classList;
-//     buttonClasses.remove('active')
-//   }
-
-//   button.addEventListener('click', removeSelected)
-// }
-
-// disableMusic.forEach(removeActiveClassToButton)
-
-// console.log(disableMusic)
+buttonFirePlace.addEventListener('click', function () {
+  buttonFirePlace.classList.toggle('active')
+  buttonRain.classList.remove('active')
+  buttonCoffeeShop.classList.remove('active')
+  buttonForest.classList.remove('active')
+})
