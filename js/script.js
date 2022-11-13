@@ -11,7 +11,8 @@ const buttonFirePlace = document.querySelector('.firePlace')
 
 const minutesDisplay = document.querySelector('.minutes');
 const secondsDisplay = document.querySelector('.seconds');
-let minutes
+let minutes = Number(minutesDisplay.textContent)
+let timerTimeOut
 
 
 
@@ -25,21 +26,22 @@ function resetControls() {
   buttonPause.classList.add('hide');
 }
 
-function updateTimerDisplay(minutes, seconds) {
-  minutesDisplay.textContent = String(minutes - 1).padStart(2, "0");
-  secondsDisplay.textContent = String(seconds - 1).padStart(2, "0");
+function resetTimer() {
+  updateTimerDisplay(minutes, 0)
+  clearTimeout(timerTimeOut)
 }
 
-function resetMinutes () {
-  minutesDisplay
+function updateTimerDisplay(minutes, seconds) {
+  minutesDisplay.textContent = String(minutes).padStart(2, "0");
+  secondsDisplay.textContent = String(seconds).padStart(2, "0");
 }
 
 function countdown () {
-  setTimeout(() => {
+  timerTimeOut = setTimeout(() => {
     let seconds = Number(secondsDisplay.textContent);
     let minutes = Number(minutesDisplay.textContent);
     
-    secondsDisplay.textContent = "00";
+    updateTimerDisplay(minutes, 0)
 
     if (minutes <= 0) {
       resetControls()
@@ -48,10 +50,10 @@ function countdown () {
     
     if (seconds <= 0) {
       seconds = 2;
-      updateTimerDisplay(minutes, 0);
+      --minutes
     };
     
-    updateTimerDisplay(minutes, seconds)
+    updateTimerDisplay(minutes, String(seconds - 1))
     
     countdown()
   }, 1000);
@@ -60,12 +62,13 @@ function countdown () {
 buttonPlay.addEventListener('click', () => {
   buttonPlay.classList.add('hide');
   buttonPause.classList.remove('hide');
-  countdown()
+  countdown();
 })
 
 buttonPause.addEventListener('click', () => {
   buttonPlay.classList.remove('hide');
   buttonPause.classList.add('hide');
+  clearTimeout(timerTimeOut);
   resetControls();
 })
 
@@ -73,7 +76,7 @@ buttonStop.addEventListener('click', () => {
   buttonPlay.classList.remove('hide');
   buttonPause.classList.add('hide');
   resetControls()
-  resetMinutes()
+  resetTimer()
 })
 
 buttonAddMinutes.addEventListener('click', () => {
