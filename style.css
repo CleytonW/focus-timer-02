@@ -97,7 +97,7 @@ button.active {
 @media (max-width: 800px) {
   main {
     flex-direction: column;
-    margin: 0 auto;
+    margin: 5 auto;
   }
 
   .counter {
@@ -105,7 +105,7 @@ button.active {
   }
 
   .buttons {
-    margin-top: 0;
+    margin: 1.5rem 0;
   }
 
   .sounds {
