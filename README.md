@@ -14,7 +14,7 @@ A ideia foi de criar o FocusTimer 2.0!
 <br>
 
 <p align="center"> 
-<img alt="Focus Timer 2.0" src=".ezgif.com-gif-maker.mp4" width="50%">
+<img alt="Focus Timer 2.0" src="" width="50%">
 </p>
 
 ## 🚀 Tecnologias
