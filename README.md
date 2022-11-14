@@ -14,7 +14,7 @@ A ideia foi de criar o FocusTimer 2.0!
 <br>
 
 <p align="center"> 
-<img alt="Focus Timer 2.0" src=".ezgif.com-gif-maker.mp4" width="50%" heigth="35%">
+<img alt="Focus Timer 2.0" src=".ezgif.com-gif-maker.mp4" width="50%">
 </p>
 
 ## 🚀 Tecnologias
@@ -22,7 +22,7 @@ A ideia foi de criar o FocusTimer 2.0!
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - HTML e CSS
-- JavaScript e JSON
+- JavaScript
 
 ## 🔖 Layout
 
