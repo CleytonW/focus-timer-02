@@ -7,14 +7,13 @@ A ideia foi de criar o FocusTimer 2.0!
 
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 <br>
 
 <p align="center"> 
-<img alt="Focus Timer 2.0" src=".github/ezgif.com-gif-maker.gif" width="100%">
+<img alt="Focus Timer 2.0" src=".github/ezgif.com-gif-maker.gif" width="50%">
 </p>
 
 ## 🚀 Tecnologias
